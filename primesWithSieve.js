@@ -4,12 +4,14 @@
   APPROACH: We will be using the Sieve of Eratosthenes method for this. 
   Reference: https://en.wikipedia.org/wiki/Sieve_of_Eratosthenes
   
-  COMPLEXITY: 
+  TIME COMPLEXITY: 
   1. Initialise Array A and fill with true ................ O(n)
   2. Go from 2 to sqrt(n) markig off the multiples ........ O(nlog(logn))
   3. Print the prime numbers .............................. O(n)
   
   Hence, total complexity: O(nlog(logn))
+  
+  SPACE COMPLEXITY: O(n)
   
   Note: The number of primes less than a given number are about n/logn.
   Reference: https://primes.utm.edu/howmany.html#1
