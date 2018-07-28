@@ -10,6 +10,9 @@
   3. Print the prime numbers .............................. O(n)
   
   Hence, total complexity: O(nlog(logn))
+  
+  Note: The number of primes less than a given number are about n/logn.
+  Reference: https://primes.utm.edu/howmany.html#1
 **/
 
 
