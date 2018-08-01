@@ -2,7 +2,6 @@
   QUESTION: Find prime numbers from 1 to n.
   
   INTENTION: 
-  
   There are 2 problems with the Sieve of Eratosthenes method:
   1. Its space complexity is O(n) which can go out of hands when n is really large.
   2. Its cache use is highly suboptimal. The algorithm exhibits almost no locality of reference.
@@ -36,13 +35,13 @@ function markAsMultiples(A, from, to, prime) {
     Start from the smallest multiple present in the range
   **/
   const quo = Math.ceil((from+1)/prime);
-  for(let i = quo*prime; i<=to; i+=prime) {
+  for(let i = quo * prime; i <= to; i += prime) {
     A[i-from] = false;
   }
 }
 
 /**
-  Finds primes between `from` to `to` based on the previous primes found so far. Exclude `from`.
+  Returns primes between `from` to `to` based on the previous primes found so far. Exclude `from`.
 **/
 function findPrimesBetween(from, to, prevPrimes) {
   /**
@@ -98,8 +97,8 @@ function findPrimesLessThanOrEqualTo(n) {
       b. The numbers not crossed off yet are primes, add them to the primes list.
   **/
   const 
-    delta = Math.floor(Math.sqrt(n)), //...................................................................................(1)
-    primes = findPrimesBySieve(delta); //..................................................................................(2)
+    delta = Math.floor(Math.sqrt(n)),
+    primes = findPrimesBySieve(delta);
     
   let m = delta;
   
