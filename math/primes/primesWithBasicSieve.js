@@ -24,12 +24,12 @@ function markMultiplesAsFalse(A, k) {
   }
 }
 
-function findPrimes(n) {
+function findPrimesLessThanOrEqualTo(n) {
   if(n < 2) {
-    return false;
+    return [];
   }
   
-  const A = Array(n).fill(true), // ......................................................................................(1)
+  const A = Array(n+1).fill(true), // ......................................................................................(1)
     sqrt = Math.sqrt(n);
   
   /**
@@ -45,10 +45,10 @@ function findPrimes(n) {
   **/
   let i = 2;
   
-  while (i < sqrt) { // ..................................................................................................(2)
+  while (i <= sqrt) { // ..................................................................................................(2)
     markMultiplesAsFalse(A, i);
     i++;
-    while(!A[i] && i < sqrt) {
+    while(!A[i] && i <= sqrt) {
       i++;
     }
   }
@@ -59,7 +59,7 @@ function findPrimes(n) {
   /**
     All the numbers still marked as true in the list are prime numbers smaller than n.
   **/
-  while(j < n) { // ......................................................................................................(3)
+  while(j <= n) { // ......................................................................................................(3)
     if(A[j]) {
       ans.push(j);
     }
@@ -68,3 +68,5 @@ function findPrimes(n) {
   
   return ans;
 }
+
+export default findPrimesLessThanOrEqualTo;
